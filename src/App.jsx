@@ -30,7 +30,6 @@ function App() {
     setData((prev) => [...prev, count+update]);
     setDay((prev) = [...prev, "Day "+dayCount])
     setUpdate('');
-    setSubmitted(true);
   }
 
   return (
