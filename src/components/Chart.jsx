@@ -35,8 +35,9 @@ const LineGraph = ({ labels, dataPoints }) => {
             x: {
                 title: {
                     display: true,
-                    text: 'Date',
+                    text: 'Day',
                 },
+                beginAtZero: true,
             },
             y: {
                 title: {
