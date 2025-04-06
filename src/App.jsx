@@ -25,7 +25,7 @@ function App() {
 
   //updates total count and chart as well as resetting update
   const submitUpdate = () => {
-    setCount(count + update + 0);
+    setCount(Number(count) + Number(update));
     setData((prev) => [...prev, count+update]);
     setDay(prev => [...prev, date]);
     setUpdate('');
