@@ -7,9 +7,9 @@ import Chart from './components/Chart.jsx';
 function App() {
 
   const [data, setData] = useState([]);
+  const [day, setDay] = useState([]);
   const [count, setCount] = useState(0);
   const [update, setUpdate] = useState(0);
-  const [day, setDay] = useState([]);
 
   //updates the input variable and ensures that it is an integer, 
   //preventing non numeric or negative numbers from being entered
@@ -25,8 +25,9 @@ function App() {
   //updates total count and chart as well as resetting update
   const submitUpdate = () => {
     setCount(count + update + 0);
-    setData(prev => [...prev, count+update]);
-    setDay(prev => [...prev, day + 1]);
+    const newDay = day + 1;
+    setData((prev) => [...prev, count+update]);
+    setDay(prev => [...prev, newDay]);
     setUpdate('');
   }
 
@@ -34,7 +35,7 @@ function App() {
     <div className="App">
       <h1>Sleep Tracker</h1>
       <h1>Total Hours Slept: {count}</h1> 
-      <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
+      <h2>Hours Last Night: <TextField value={update} onChange={setValue} /></h2>
       <Button label="Update" onClick={submitUpdate} />
       <Chart labels={day} dataPoints={data} />
     </div>
