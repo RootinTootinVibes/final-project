@@ -43,7 +43,7 @@ function App() {
       <h1>Sleep Tracker</h1>
       <h1>Total Hours Slept: {count}</h1> 
         <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
-        <h2>Date: <TextField value={date} onChange={setDate} /></h2>
+        <h2>Date: <TextField value={dateInput} onChange={setDate} /></h2>
         <Button label="Update" onClick={submitUpdate} />
       <Chart labels={date} dataPoints={data} />
     </div>
