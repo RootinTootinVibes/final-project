@@ -10,6 +10,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [update, setUpdate] = useState(0);
   const [date, setNewDate] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
   //updates the input variable and ensures that it is an integer, 
   //preventing non numeric or negative numbers from being entered
@@ -33,6 +34,7 @@ function App() {
     setNewDate(prev => [...prev, newDate]);
     setData((prev) => [...prev, count+update]);
     setUpdate('');
+    setSubmitted(true);
   }
 
   return (
@@ -41,8 +43,8 @@ function App() {
       <h1>Total Hours Slept: {count}</h1> 
       <form onSubmit={submitUpdate}>
         <h2>Hours: <TextField value={update} onChange={setValue}/></h2>
-        <h2>Date: <TextField value={date} onSubmit={setDate}/></h2>
-        <Button label="Update"  />
+        <h2>Date: <TextField value={date} onChange={setDate} disabled={submitted}/></h2>
+        <button type="submit" disabled={submitted}>Update</button>
       </form>
       <Chart labels={date} dataPoints={data} />
     </div>
