@@ -10,6 +10,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [update, setUpdate] = useState(0);
   const [date, setNewDate] = useState('');
+  const [dateInput, setDateInput] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   //updates the input variable and ensures that it is an integer, 
@@ -24,7 +25,7 @@ function App() {
   }
 
   const setDate = (e) => {
-      setNewDate(e.target.value);
+      setDateInput(e.target.value);
     
   }
 
@@ -32,6 +33,7 @@ function App() {
   const submitUpdate = () => {
     setCount(count + update + 0);
     setData((prev) => [...prev, count+update]);
+    setNewDate((prev) = [...prev, dateInput])
     setUpdate('');
     setSubmitted(true);
   }
@@ -40,11 +42,9 @@ function App() {
     <div className="App">
       <h1>Sleep Tracker</h1>
       <h1>Total Hours Slept: {count}</h1> 
-      <form onSubmit={submitUpdate}>
-        <h2>Hours: <TextField value={update} onChange={setValue}/></h2>
-        <h2>Date: <input type="text" value={date} onChange={setDate} disabled={submitted}/></h2>
-        <button type="submit" disabled={submitted}>Update</button>
-      </form>
+        <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
+        <h2>Date: <TextField value={date} onChange={setDate} /></h2>
+        <Button label="Update" onClick={submitUpdate} />
       <Chart labels={date} dataPoints={data} />
     </div>
   );
