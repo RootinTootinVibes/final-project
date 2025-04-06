@@ -14,12 +14,12 @@ import classes from './Chart.module.css';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, Title);
 
-const LineGraph = ({ labels, dataPoints, option = 'Miles Ran' }) => {
+const LineGraph = ({ labels, dataPoints }) => {
     const data = {
         labels,
         datasets: [
             {
-                label: 'Lets Go!',
+                label: 'Consecutive Hours Slept',
                 data: dataPoints,
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -35,13 +35,13 @@ const LineGraph = ({ labels, dataPoints, option = 'Miles Ran' }) => {
             x: {
                 title: {
                     display: true,
-                    text: 'Time',
+                    text: 'Date',
                 },
             },
             y: {
                 title: {
                     display: true,
-                    text: option,
+                    text: 'Hours',
                 },
                 beginAtZero: true, 
             },
