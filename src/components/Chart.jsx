@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -10,11 +10,10 @@ import {
     Legend,
     Title,
 } from 'chart.js';
-import classes from './Chart.module.css';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, Title);
 
-const LineGraph = ({ labels, dataPoints }) => {
+const LineGraph = ({ labels = [], dataPoints = [] }) => {
     const data = {
         labels,
         datasets: [
@@ -37,7 +36,6 @@ const LineGraph = ({ labels, dataPoints }) => {
                     display: true,
                     text: 'Day',
                 },
-                beginAtZero: true,
             },
             y: {
                 title: {
