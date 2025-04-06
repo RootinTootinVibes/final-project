@@ -27,7 +27,7 @@ function App() {
     setCount(count + update + 0);
     const newDay = day + 1;
     setData((prev) => [...prev, count+update]);
-    setDay(prev => [...prev, newDay]);
+    setDay(prev => [...prev, 1]);
     setUpdate('');
   }
 
