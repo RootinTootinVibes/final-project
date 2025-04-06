@@ -25,8 +25,8 @@ function App() {
   //updates total count and chart as well as resetting update
   const submitUpdate = () => {
     setCount(count + update + 0);
-    setData((prev) => [...prev, count+update]);
-    setDay((prev) => [...prev, day + 1]);
+    setData(prev => [...prev, count+update]);
+    setDay(prev => [...prev, day + 1]);
     setUpdate('');
   }
 
@@ -34,8 +34,8 @@ function App() {
     <div className="App">
       <h1>Sleep Tracker</h1>
       <h1>Total Hours Slept: {count}</h1> 
-        <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
-        <Button label="Update" onClick={submitUpdate} />
+      <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
+      <Button label="Update" onClick={submitUpdate} />
       <Chart labels={day} dataPoints={data} />
     </div>
   );
