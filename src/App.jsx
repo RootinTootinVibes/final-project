@@ -43,7 +43,7 @@ function App() {
       <h1>Total Hours Slept: {count}</h1> 
       <form onSubmit={submitUpdate}>
         <h2>Hours: <TextField value={update} onChange={setValue}/></h2>
-        <h2>Date: <TextField value={date} onChange={setDate} disabled={submitted}/></h2>
+        <h2>Date: <input type="text" value={date} onChange={setDate} disabled={submitted}/></h2>
         <button type="submit" disabled={submitted}>Update</button>
       </form>
       <Chart labels={date} dataPoints={data} />
