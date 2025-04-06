@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://RootinTootinVibes.github.io/Final-Project",
+  "homepage": "https://RootinTootinVibes.github.io/final-project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
