@@ -26,7 +26,7 @@ function App() {
   const submitUpdate = () => {
     setCount(count + update + 0);
     setData((prev) => [...prev, count+update]);
-    setDay((prev) = [...prev, day + 1]);
+    setDay((prev) => [...prev, day + 1]);
     setUpdate('');
   }
 
