@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from './components/Button.jsx';
 import TextField from './components/TextField.jsx';
-import RadioButtons from './components/RadioButtons.jsx';
 import Chart from './components/Chart.jsx';
-import { isDataView } from 'node:util/types';
 
 function App() {
 
@@ -25,9 +23,8 @@ function App() {
   }
 
   const setDate = (e) => {
-    if(isDate(e)) {
       setNewDate(e.target.value);
-    }
+    
   }
 
   //updates total count and chart as well as resetting update
