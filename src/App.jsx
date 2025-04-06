@@ -8,6 +8,7 @@ function App() {
 
   const [data, setData] = useState([]);
   const [day, setDay] = useState([]);
+  const [date, setNewDate] = useState('');
   const [count, setCount] = useState(0);
   const [update, setUpdate] = useState(0);
 
@@ -25,9 +26,8 @@ function App() {
   //updates total count and chart as well as resetting update
   const submitUpdate = () => {
     setCount(count + update + 0);
-    const newDay = parseInt(day) + 1;
     setData((prev) => [...prev, count+update]);
-    setDay(prev => [...prev, newDay]);
+    setDay(prev => [...prev, date]);
     setUpdate('');
   }
 
@@ -36,6 +36,7 @@ function App() {
       <h1>Sleep Tracker</h1>
       <h1>Total Hours Slept: {count}</h1> 
       <h2>Hours Last Night: <TextField value={update} onChange={setValue} /></h2>
+      <h2>Date: <TextField value={date} onChange={(e) => setNewDate(e.target.value)} /></h2>
       <Button label="Update" onClick={submitUpdate} />
       <Chart labels={day} dataPoints={data} />
     </div>
