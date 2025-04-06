@@ -19,7 +19,7 @@ const LineGraph = ({ labels, dataPoints, option = 'Miles Ran' }) => {
         labels,
         datasets: [
             {
-                label: 'Progress',
+                label: 'Lets Go!',
                 data: dataPoints,
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
