@@ -9,8 +9,7 @@ function App() {
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
   const [update, setUpdate] = useState(0);
-  const [day, setDay] = useState('');
-  const [dayCount, setDayCount] = useState(1);
+  const [day, setDay] = useState([]);
 
   //updates the input variable and ensures that it is an integer, 
   //preventing non numeric or negative numbers from being entered
@@ -25,10 +24,9 @@ function App() {
 
   //updates total count and chart as well as resetting update
   const submitUpdate = () => {
-    setDayCount(day + 1);
     setCount(count + update + 0);
     setData((prev) => [...prev, count+update]);
-    setDay((prev) = [...prev, "Day "+dayCount])
+    setDay((prev) = [...prev, day + 1]);
     setUpdate('');
   }
 
