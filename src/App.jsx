@@ -39,7 +39,7 @@ function App() {
       <h1>Total Hours Slept: {count}</h1> 
         <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
         <Button label="Update" onClick={submitUpdate} />
-      <Chart labels={date} dataPoints={data} />
+      <Chart labels={day} dataPoints={data} />
     </div>
   );
 }
