@@ -9,9 +9,8 @@ function App() {
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
   const [update, setUpdate] = useState(0);
-  const [date, setNewDate] = useState('');
-  const [dateInput, setDateInput] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [day, setDay] = useState('');
+  const [dayCount, setDayCount] = useState(1);
 
   //updates the input variable and ensures that it is an integer, 
   //preventing non numeric or negative numbers from being entered
@@ -24,16 +23,12 @@ function App() {
     }
   }
 
-  const setDate = (e) => {
-      setDateInput(e.target.value);
-    
-  }
-
   //updates total count and chart as well as resetting update
   const submitUpdate = () => {
+    setDayCount(day + 1);
     setCount(count + update + 0);
     setData((prev) => [...prev, count+update]);
-    setNewDate((prev) = [...prev, dateInput])
+    setDay((prev) = [...prev, "Day "+dayCount])
     setUpdate('');
     setSubmitted(true);
   }
@@ -43,7 +38,6 @@ function App() {
       <h1>Sleep Tracker</h1>
       <h1>Total Hours Slept: {count}</h1> 
         <h2>Hours: <TextField value={update} onChange={setValue} /></h2>
-        <h2>Date: <TextField value={dateInput} onChange={setDate} /></h2>
         <Button label="Update" onClick={submitUpdate} />
       <Chart labels={date} dataPoints={data} />
     </div>
